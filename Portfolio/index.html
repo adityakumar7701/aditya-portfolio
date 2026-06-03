@@ -1,0 +1,992 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Aditya Kumar | Portfolio</title>
+<link rel="icon" href="profile.jpg">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+background:#050816;
+color:white;
+overflow-x:hidden;
+}
+
+/* Animated Background */
+
+body::before{
+content:"";
+position:fixed;
+inset:0;
+background:
+radial-gradient(circle at 20% 20%,rgba(0,150,255,.25),transparent 30%),
+radial-gradient(circle at 80% 30%,rgba(128,0,255,.25),transparent 30%),
+radial-gradient(circle at 50% 80%,rgba(0,255,200,.18),transparent 30%);
+z-index:-1;
+animation:moveBg 8s infinite alternate;
+}
+
+@keyframes moveBg{
+from{
+transform:scale(1);
+}
+to{
+transform:scale(1.08);
+}
+}
+
+/* Navbar */
+
+nav{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+padding:18px;
+display:flex;
+justify-content:center;
+gap:30px;
+background:rgba(0,0,0,.4);
+backdrop-filter:blur(12px);
+z-index:999;
+overflow-x:auto;
+white-space:nowrap;
+}
+nav::-webkit-scrollbar{
+display:none;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+font-weight:500;
+transition:.3s;
+flex-shrink:0;
+}
+
+nav a:hover{
+color:#00d4ff;
+}
+nav a{
+flex-shrink:0;
+}
+
+/* Hero Section */
+
+.hero{
+display:flex;
+flex-direction:column;
+align-items:center;
+text-align:center;
+padding:90px 20px 20px;
+}
+
+.profile{
+width:200px;
+height:200px;
+border-radius:50%;
+object-fit:cover;
+border:4px solid #00d4ff;
+box-shadow:0 0 40px #00d4ff;
+transition:.4s;
+}
+
+.profile:hover{
+transform:scale(1.08);
+box-shadow:0 0 70px #8b5cf6;
+}
+
+.hero h1{
+margin-top:25px;
+font-size:4rem;
+background:linear-gradient(
+90deg,
+#00d4ff,
+#8b5cf6,
+#00ffbf
+);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+.subtitle{
+margin-top:15px;
+font-size:1.2rem;
+color:#d1d5db;
+max-width:700px;
+}
+
+.typing{
+margin-top:15px;
+font-size:24px;
+font-weight:600;
+color:#00d4ff;
+min-height:35px;
+}
+
+/* Buttons */
+
+.btns{
+margin-top:25px;
+}
+
+.btn{
+display:inline-block;
+padding:14px 24px;
+margin:8px;
+border-radius:30px;
+text-decoration:none;
+color:white;
+background:linear-gradient(
+90deg,
+#2563eb,
+#7c3aed
+);
+transition:.3s;
+}
+
+.btn:hover{
+transform:translateY(-5px);
+}
+
+/* Achievement Cards */
+
+.stats{
+margin-top:0px;
+display:grid;
+grid-template-columns:
+repeat(auto-fit,minmax(180px,1fr));
+gap:20px;
+width:100%;
+max-width:900px;
+}
+
+.stat{
+background:rgba(255,255,255,.06);
+border:1px solid rgba(255,255,255,.1);
+backdrop-filter:blur(12px);
+padding:25px;
+border-radius:20px;
+transition:.4s;
+}
+
+.stat:hover{
+transform:translateY(-8px);
+box-shadow:0 0 25px rgba(0,212,255,.4);
+}
+
+.stat h2{
+color:#00d4ff;
+font-size:2rem;
+}
+
+/* Sections */
+
+section{
+padding:60px 10%;
+}
+
+.section-title{
+font-size:2.2rem;
+margin-bottom:25px;
+color:#00d4ff;
+}
+
+.card{
+background:rgba(255,255,255,.06);
+border:1px solid rgba(255,255,255,.1);
+backdrop-filter:blur(12px);
+padding:30px;
+border-radius:25px;
+transition:.4s;
+}
+
+.card:hover{
+transform:translateY(-8px);
+box-shadow:0 0 25px rgba(0,212,255,.3);
+}
+
+.highlight{
+color:#00d4ff;
+font-weight:600;
+}
+
+.grid{
+display:grid;
+grid-template-columns:
+repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+}
+
+.skill{
+background:rgba(255,255,255,.06);
+padding:20px;
+border-radius:16px;
+text-align:center;
+transition:.3s;
+text-decoration:none;
+color:white;
+display:flex;
+justify-content:center;
+align-items:center;
+min-height:110px;
+}
+
+.skill:hover{
+transform:translateY(-8px);
+background:#2563eb;
+}
+
+.tech-stack{
+margin-top:15px;
+display:flex;
+flex-wrap:wrap;
+gap:10px;
+}
+
+.badge{
+padding:8px 14px;
+border-radius:20px;
+background:linear-gradient(
+90deg,
+#2563eb,
+#7c3aed
+);
+font-size:14px;
+font-weight:600;
+}
+
+.skill h3{
+margin-bottom:8px;
+color:#00d4ff;
+font-size:22px;
+}
+
+.skill p{
+margin:4px 0;
+font-size:15px;
+}
+
+/* FOOTER */
+
+.footer{
+margin-top:100px;
+padding:60px 20px;
+background:rgba(255,255,255,.05);
+backdrop-filter:blur(20px);
+border-top:1px solid rgba(255,255,255,.1);
+text-align:center;
+}
+
+.footer-content{
+max-width:1200px;
+margin:auto;
+}
+
+.footer-content h2{
+font-size:32px;
+margin-bottom:10px;
+background:linear-gradient(90deg,#00d4ff,#8b5cf6);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+.footer-content p{
+color:#d1d5db;
+font-size:18px;
+}
+
+.footer-links{
+margin-top:25px;
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:15px;
+}
+
+.footer-links a{
+text-decoration:none;
+padding:12px 22px;
+border-radius:50px;
+background:linear-gradient(90deg,#2563eb,#7c3aed);
+color:white;
+font-weight:600;
+transition:.3s;
+}
+
+.footer-links a:hover{
+transform:translateY(-5px);
+box-shadow:0 0 20px #8b5cf6;
+}
+
+.footer-line{
+width:80%;
+height:1px;
+background:rgba(255,255,255,.15);
+margin:30px auto;
+}
+
+.copyright{
+font-size:15px;
+color:#9ca3af;
+}
+
+@media(max-width:768px){
+
+.hero{
+padding-top:90px;
+}
+
+.hero h1{
+font-size:2.8rem;
+}
+
+.profile{
+width:140px;
+height:140px;
+}
+
+.subtitle{
+font-size:16px;
+}
+
+.typing{
+font-size:18px;
+}
+
+@media(max-width:768px){
+
+.hero{
+padding-top:90px;
+}
+
+.hero h1{
+font-size:2.8rem;
+}
+
+.profile{
+width:140px;
+height:140px;
+}
+
+.subtitle{
+font-size:16px;
+}
+
+.typing{
+font-size:18px;
+}
+
+nav{
+justify-content:flex-start;
+overflow-x:auto;
+white-space:nowrap;
+padding-left:15px;
+}
+
+nav a{
+flex-shrink:0;
+}
+
+nav::-webkit-scrollbar{
+display:none;
+}
+
+.stats{
+margin-top:20px;
+}
+
+.stat{
+padding:15px;
+}
+
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<nav>
+<a href="#about">About</a>
+<a href="#skills">Skills</a>
+<a href="#education">Education</a>
+<a href="#project">Project</a>
+<a href="#experience">Experience</a>
+<a href="#certificates">Certificates</a>
+<a href="#contact">Contact</a>
+</nav>
+
+<!-- HERO SECTION -->
+
+<section class="hero">
+
+<img src="profile.jpg" class="profile">
+
+<h1>Aditya Kumar</h1>
+
+<p class="typing"></p>
+
+<p class="subtitle">
+B.Tech CSE Student • Android Developer • Firebase Developer • School ERP Project Developer
+</p>
+
+<div class="btns">
+
+<a class="btn"
+href="https://github.com/adityakumar7701"
+target="_blank">
+GitHub
+</a>
+
+<a class="btn"
+href="https://www.linkedin.com/in/aditya-kumar-328034383"
+target="_blank">
+LinkedIn
+</a>
+
+<a class="btn"
+href="resume.jpg"
+target="_blank">
+📄 View Resume
+</a>
+
+</div>
+
+<div class="stats">
+
+<div class="stat">
+<h2>10+</h2>
+<p>Certificates</p>
+</div>
+
+<div class="stat">
+<h2>3+</h2>
+<p>Internships</p>
+</div>
+
+<div class="stat">
+<h2>1</h2>
+<p>Major Project</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- ABOUT -->
+
+<section id="about">
+
+<h2 class="section-title">
+About Me
+</h2>
+
+<div class="card">
+
+<p>
+
+I am
+<span class="highlight">
+Aditya Kumar
+</span>,
+
+a passionate B.Tech Computer Science Engineering student at
+Swami Vivekanand Subharti University, Meerut.
+
+<br><br>
+
+I have a strong interest in Android Development, Firebase,
+Java Programming, Web Development, Data Science and Software Engineering.
+
+<br><br>
+
+My most significant project is
+
+<span class="highlight">
+RPM Memorial School ERP System
+</span>
+
+which includes Student, Teacher, Principal and Director Dashboards,
+Attendance Management, Homework Module, Timetable Management and Firebase Integration.
+
+<br><br>
+
+I enjoy building real-world applications,
+participating in internships, coding competitions,
+hackathons and learning new technologies.
+
+</p>
+
+</div>
+
+</section>
+
+<!-- SKILLS -->
+
+<section id="skills">
+
+<h2 class="section-title">
+Skills
+</h2>
+
+<div class="grid">
+
+<div class="skill">
+Android Studio
+</div>
+
+<div class="skill">
+Java
+</div>
+
+<div class="skill">
+Firebase
+</div>
+
+<div class="skill">
+Python
+</div>
+
+<div class="skill">
+HTML
+</div>
+
+<div class="skill">
+CSS
+</div>
+
+<div class="skill">
+JavaScript
+</div>
+
+<div class="skill">
+Git & GitHub
+</div>
+
+<div class="skill">
+SQL
+</div>
+
+<div class="skill">
+Data Science
+</div>
+
+<div class="skill">C Programming</div>
+
+<div class="skill">C++</div>
+
+<div class="skill">Git</div>
+
+<div class="skill">GitHub</div>
+
+<div class="skill">Kotlin</div>
+
+<div class="skill">PHP</div>
+
+</div>
+
+</section>
+
+<section id="education">
+
+<h2 class="section-title">
+Education
+</h2>
+
+<div class="card">
+
+<h3>B.Tech Computer Science Engineering</h3>
+
+<p>
+Swami Vivekanand Subharti University, Meerut
+</p>
+
+<p>
+2025 - 2029
+</p>
+
+</div>
+
+</section>
+
+<!-- PROJECT -->
+
+<section id="project">
+
+<h2 class="section-title">
+Featured Project
+</h2>
+
+<div class="card">
+
+<h2>
+RPM Memorial School ERP System
+</h2>
+
+<br>
+
+<p>
+
+Complete School Management Platform built using Android Studio,
+Java and Firebase.
+
+</p>
+
+<br>
+
+<div class="tech-stack">
+
+<span class="badge">Java</span>
+
+<span class="badge">Firebase</span>
+
+<span class="badge">Android Studio</span>
+
+<span class="badge">XML</span>
+
+<span class="badge">GitHub</span>
+
+</div>
+
+<br>
+
+<ul>
+
+<li>Student Dashboard</li>
+
+<li>Teacher Dashboard</li>
+
+<li>Principal Dashboard</li>
+
+<li>Director Dashboard</li>
+
+<li>Attendance Management</li>
+
+<li>Homework Module</li>
+
+<li>Timetable Management</li>
+
+<li>Firebase Authentication</li>
+
+<li>Notifications System</li>
+
+</ul>
+
+<br>
+
+<a class="btn"
+href="https://rpmemorialschool.netlify.app"
+target="_blank">
+App Website
+</a>
+
+<a class="btn"
+href="https://adityakumar7701.github.io/rpmemorialschool/"
+target="_blank">
+Live Demo
+</a>
+
+<a class="btn"
+href="https://github.com/adityakumar7701/rpmemorialschool/releases"
+target="_blank">
+Download APK
+</a>
+
+</div>
+
+</section>
+
+<section id="experience">
+
+<h2 class="section-title">
+Experience
+</h2>
+
+<div class="grid">
+
+<div class="skill">
+<div>
+<h3>Data Science Intern</h3>
+<p>Grad Guru</p>
+<p>Duration: 3 Months</p>
+</div>
+</div>
+
+<div class="skill">
+<div>
+<h3>Python Intern</h3>
+<p>CodeSoft</p>
+<p>Duration: 1 Month</p>
+</div>
+</div>
+
+<div class="skill">
+<div>
+<h3>C Programming Intern</h3>
+<p>CodeAlpha</p>
+<p>Duration: 1 Month</p>
+</div>
+</div>
+
+</div>
+
+</section>
+
+<!-- CERTIFICATES -->
+
+<section id="certificates">
+
+<h2 class="section-title">
+Certificates & Achievements
+</h2>
+
+<div class="grid">
+
+<a class="skill" href="certificates/nptel-robotics.jpg" target="_blank">
+🏆 NPTEL Elite – Experimental Robotics (75%)
+</a>
+
+<a class="skill" href="certificates/gradguru-internship.jpg" target="_blank">
+🏆 Data Science Internship – Grad Guru
+</a>
+
+<a class="skill" href="certificates/gradguru-course.jpg" target="_blank">
+🏆 Data Science Course Completion – Grad Guru
+</a>
+
+<a class="skill" href="certificates/codesoft-python.jpg" target="_blank">
+🏆 Python Internship – CodeSoft
+</a>
+
+<a class="skill" href="certificates/codealpha-c.jpg" target="_blank">
+🏆 C Programming Internship – CodeAlpha
+</a>
+
+<a class="skill" href="certificates/codewar.jpg" target="_blank">
+🥇 CodeWar Competition – 1st Position
+</a>
+
+<a class="skill" href="certificates/hackshastra.jpg" target="_blank">
+🏅 HackShastra AI Hackathon Participant
+</a>
+
+<a class="skill" href="certificates/ibm-ai.jpg" target="_blank">
+🏅 IBM SkillsBuild AI Hackathon
+</a>
+
+</div>
+
+</section>
+
+<!-- CONTACT -->
+
+<section id="contact">
+
+<h2 class="section-title">
+Contact Me
+</h2>
+
+<div class="card">
+
+<p style="font-size:18px">
+
+Let's connect and build something amazing together 🚀
+
+</p>
+
+<br><br>
+
+<div style="
+display:flex;
+flex-wrap:wrap;
+gap:15px;
+justify-content:center;
+">
+
+<!-- WHATSAPP -->
+
+<a class="btn"
+href="https://wa.me/918709066751?text=Hello%20Aditya,%20I%20visited%20your%20portfolio!"
+target="_blank">
+
+💬 WhatsApp
+
+</a>
+
+<!-- EMAIL -->
+
+<a class="btn"
+href="mailto:adityakumar76060@gmail.com">
+
+📧 Email
+
+</a>
+
+<!-- GITHUB -->
+
+<a class="btn"
+href="https://github.com/adityakumar7701"
+target="_blank">
+
+🐙 GitHub
+
+</a>
+
+<!-- LINKEDIN -->
+
+<a class="btn"
+href="https://www.linkedin.com/in/aditya-kumar-328034383"
+target="_blank">
+
+💼 LinkedIn
+
+</a>
+
+</div>
+
+<br><br>
+
+<hr style="
+border:1px solid rgba(255,255,255,.1);
+">
+
+<br>
+
+<p>
+
+📱 <b>Phone:</b> 8709066751
+
+</p>
+
+<br>
+
+<p>
+
+📧 <b>Email:</b> adityakumar76060@gmail.com
+
+</p>
+
+<br>
+
+<p>
+
+📍 <b>Location:</b> Meerut, Uttar Pradesh, India
+
+</p>
+
+</div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer class="footer">
+
+<div class="footer-content">
+
+<h2>Aditya Kumar</h2>
+
+<p>
+🚀 B.Tech CSE Student | Android Developer | Firebase Developer
+</p>
+
+<p class="copyright">
+© 2026 All Rights Reserved | Designed & Developed ❤️ By Aditya Kumar
+</p>
+
+</div>
+
+</footer>
+
+<script>
+
+const roles = [
+"Android Developer",
+"Firebase Developer",
+"Java Programmer",
+"Web Developer",
+"Open Source Learner"
+];
+
+let roleIndex = 0;
+let charIndex = 0;
+let isDeleting = false;
+
+function typeEffect() {
+
+const currentRole = roles[roleIndex];
+const typingText = document.querySelector(".typing");
+
+if (!isDeleting) {
+
+typingText.innerHTML =
+currentRole.substring(0, charIndex + 1);
+
+charIndex++;
+
+if (charIndex === currentRole.length) {
+
+isDeleting = true;
+
+setTimeout(typeEffect, 2000);
+
+return;
+
+}
+
+} else {
+
+typingText.innerHTML =
+currentRole.substring(0, charIndex - 1);
+
+charIndex--;
+
+if (charIndex === 0) {
+
+isDeleting = false;
+
+roleIndex++;
+
+if (roleIndex >= roles.length) {
+
+roleIndex = 0;
+
+}
+
+}
+
+}
+
+setTimeout(typeEffect, isDeleting ? 50 : 100);
+
+}
+
+typeEffect();
+
+</script>
+
+</body>
+</html>
